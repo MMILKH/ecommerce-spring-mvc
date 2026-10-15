@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -20,8 +19,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories({"com.ecommercespring.repository"})
-@ComponentScan({"com.ecommercespring"})
+@ComponentScan(basePackages = "com.ecommercespring")
 @PropertySource(value = {"classpath:db.properties"})
 public class AppConfig {
 
@@ -47,6 +45,7 @@ public class AppConfig {
         sessionFactory.setPackagesToScan("com.ecommercespring.model");
 
         Properties hibernateProperties = new Properties();
+        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
         hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
         hibernateProperties.setProperty("hibernate.show_sql", "true");
         hibernateProperties.setProperty("hibernate.format_sql", "true");
