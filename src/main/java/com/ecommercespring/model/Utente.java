@@ -19,7 +19,7 @@ public class Utente
     private String cognome;
 
     @Column(name="EMAIL",nullable = false,unique = true)
-    private String EMAIL;
+    private String email;
 
     @Column(name="NUMERO",nullable = false)
     private String numero;
@@ -66,12 +66,12 @@ public class Utente
         this.cognome = cognome;
     }
 
-    public String getEMAIL() {
-        return EMAIL;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEMAIL(String EMAIL) {
-        this.EMAIL = EMAIL;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNumero() {

@@ -9,12 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a4ce172-96a9-49dc-a584-5dc7fc8f7cf4" name="Changes" comment="model creati e importazione delle jsp dallo scorso progetto">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/WebMvcConfig.java" afterDir="false" />
+    <list default="true" id="3a4ce172-96a9-49dc-a584-5dc7fc8f7cf4" name="Changes" comment="parte il progetto">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/CarrelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/ProdottoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/CarrelloDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/LoginDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/ProdottoCatalogoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/RigaCarrelloDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/ProdottoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/UtenteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/ProdottoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/UtenteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/ProdottoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/UtenteServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/util/Password.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -52,61 +72,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0020644895808704" />
-      <entry key="MS500" value="1.3069552202858732" />
-      <entry key="S2" value="2.1884613233702175" />
-      <entry key="S5" value="2.938707384413543" />
-      <entry key="S10" value="3.380349830262134" />
-      <entry key="S30" value="3.768995736310526" />
-      <entry key="S60" value="3.8954414536510176" />
-      <entry key="M2" value="4.1775237785939305" />
-      <entry key="M5" value="6.168642099977633" />
-      <entry key="M10" value="9.192760450286745" />
-      <entry key="M15" value="11.17254390237809" />
-      <entry key="M30" value="15.782142586720678" />
-      <entry key="H1" value="24.791989735869258" />
-      <entry key="H2" value="43.43350685429493" />
-      <entry key="H4" value="72.43398438477075" />
-      <entry key="D1" value="130.87791429508258" />
-      <entry key="W1" value="147.05466555532456" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="8.93163741600895E-218" />
+      <entry key="S10" value="2.988611201731244E-109" />
+      <entry key="S30" value="7.163476678081387E-37" />
+      <entry key="S60" value="1.4029087172494307E-18" />
+      <entry key="M2" value="3.2457611038689856E-9" />
+      <entry key="M5" value="0.0019931833721361573" />
+      <entry key="M10" value="0.19846830671479498" />
+      <entry key="M15" value="0.9997303815293647" />
+      <entry key="M30" value="5.934025991965363" />
+      <entry key="H1" value="17.164323218799197" />
+      <entry key="H2" value="36.08807743149169" />
+      <entry key="H4" value="68.7990884554884" />
+      <entry key="D1" value="170.80037301305703" />
+      <entry key="W1" value="208.64915579758917" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.817108876224955E-248" />
-      <entry key="MS500" value="3.4399908901700906E-50" />
-      <entry key="S2" value="4.3066474701929795E-13" />
-      <entry key="S5" value="1.1315030536415106E-5" />
-      <entry key="S10" value="0.003363951216814913" />
-      <entry key="S30" value="0.1553628773479308" />
-      <entry key="S60" value="0.46144242571647" />
-      <entry key="M2" value="0.8948486937645985" />
-      <entry key="M5" value="1.4217685226676" />
-      <entry key="M10" value="1.6856624099824864" />
-      <entry key="M15" value="1.8292016759145717" />
-      <entry key="M30" value="2.392435420892595" />
-      <entry key="H1" value="4.1564780440146105" />
-      <entry key="H2" value="9.956979739667673" />
-      <entry key="H4" value="21.08798344796187" />
-      <entry key="D1" value="45.67972685976313" />
-      <entry key="W1" value="52.712665098593725" />
+      <entry key="MS100" value="1.0000000000000036" />
+      <entry key="MS500" value="1.0012814563042738" />
+      <entry key="S2" value="1.19019229392568" />
+      <entry key="S5" value="1.5766194749418965" />
+      <entry key="S10" value="1.9674729721311188" />
+      <entry key="S30" value="2.525485358085781" />
+      <entry key="S60" value="2.7400813088492706" />
+      <entry key="M2" value="2.8637370588022075" />
+      <entry key="M5" value="2.944566157326438" />
+      <entry key="M10" value="3.0396921743976835" />
+      <entry key="M15" value="3.3247432643157" />
+      <entry key="M30" value="5.056809223004935" />
+      <entry key="H1" value="9.194588738931234" />
+      <entry key="H2" value="16.064478178549564" />
+      <entry key="H4" value="27.65358455752638" />
+      <entry key="D1" value="66.16988060353893" />
+      <entry key="W1" value="81.07876931847345" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0030410516490644687" />
-      <entry key="MS500" value="0.5555453523755124" />
-      <entry key="S2" value="1.8777187053377409" />
-      <entry key="S5" value="2.7864512479361387" />
-      <entry key="S10" value="3.299169460423782" />
-      <entry key="S30" value="3.8878868033007263" />
-      <entry key="S60" value="4.320690114159197" />
-      <entry key="M2" value="5.029435468461744" />
-      <entry key="M5" value="7.555213678848482" />
-      <entry key="M10" value="10.85485538991462" />
-      <entry key="M15" value="12.983897554274193" />
-      <entry key="M30" value="18.162778228661224" />
-      <entry key="H1" value="28.939419476164836" />
-      <entry key="H2" value="53.382126218208185" />
-      <entry key="H4" value="93.51451626536242" />
-      <entry key="D1" value="176.55525817628077" />
-      <entry key="W1" value="199.7669445780444" />
+      <entry key="MS100" value="1.0422060064349337E-5" />
+      <entry key="MS500" value="0.10094054128086279" />
+      <entry key="S2" value="0.6667429545186091" />
+      <entry key="S5" value="1.2533191267909372" />
+      <entry key="S10" value="1.7629530261736903" />
+      <entry key="S30" value="2.440665413094647" />
+      <entry key="S60" value="2.6947564112673765" />
+      <entry key="M2" value="2.8402575234396887" />
+      <entry key="M5" value="2.9369484421312193" />
+      <entry key="M10" value="3.2328342529403415" />
+      <entry key="M15" value="4.319619991709869" />
+      <entry key="M30" value="10.98439300461124" />
+      <entry key="H1" value="26.350897940560547" />
+      <entry key="H2" value="52.144460707975405" />
+      <entry key="H4" value="96.44510462790502" />
+      <entry key="D1" value="236.96710547576086" />
+      <entry key="W1" value="289.72737349024277" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -273,6 +293,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="model creati e importazione delle jsp dallo scorso progetto" />
-    <option name="LAST_COMMIT_MESSAGE" value="model creati e importazione delle jsp dallo scorso progetto" />
+    <MESSAGE value="parte il progetto" />
+    <option name="LAST_COMMIT_MESSAGE" value="parte il progetto" />
   </component>
 </project>

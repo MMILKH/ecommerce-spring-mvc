@@ -1,6 +1,7 @@
 package com.ecommercespring.config;
 
 
+import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,9 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -19,6 +24,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = "com.ecommercespring.repository")
 @ComponentScan(basePackages = "com.ecommercespring")
 @PropertySource(value = {"classpath:db.properties"})
 public class AppConfig {
@@ -37,27 +43,38 @@ public class AppConfig {
         return dataSource;
     }
 
-    @Bean
-    public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
-        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource);
-
-        sessionFactory.setPackagesToScan("com.ecommercespring.model");
-
-        Properties hibernateProperties = new Properties();
-        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
-        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
-        hibernateProperties.setProperty("hibernate.show_sql", "true");
-        hibernateProperties.setProperty("hibernate.format_sql", "true");
-
-        sessionFactory.setHibernateProperties(hibernateProperties);
-        return sessionFactory;
+    private Properties additionalProperties() {
+        Properties properties = new Properties();
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
+        properties.setProperty("hibernate.show_sql", "true");
+        properties.setProperty("hibernate.format_sql", "true");
+        properties.setProperty("hibernate.hbm2ddl.auto", "validate");
+        return properties;
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(SessionFactory sessionFactory) {
-        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-        transactionManager.setSessionFactory(sessionFactory);
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        try {
+            LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+            em.setDataSource(dataSource());
+            em.setPackagesToScan("com.ecommercespring.model");
+
+            HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+            em.setJpaVendorAdapter(vendorAdapter);
+            em.setJpaProperties(additionalProperties());
+
+            return em;
+        } catch (Throwable e) {
+            System.err.println("=== ERRORE NELLA CREAZIONE DI ENTITY_MANAGER_FACTORY ===");
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;
     }
 }
