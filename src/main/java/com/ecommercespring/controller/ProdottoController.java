@@ -1,6 +1,7 @@
 package com.ecommercespring.controller;
 
-import com.ecommercespring.dto.ProdottoCatalogoDto;
+import com.ecommercespring.dto.ProdottoDto;
+import com.ecommercespring.service.CarrelloService;
 import com.ecommercespring.service.ProdottoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,19 +18,23 @@ public class ProdottoController {
 
     @Autowired
     private ProdottoService prodottoService;
-
+    @Autowired
+    private CarrelloService carrelloService;
     @GetMapping
-    public String mostraCatalogo(
+    public String showCatalogo(
             @RequestParam(value = "categoria", required = false) String categoria,
             Model model) {
 
-        List<ProdottoCatalogoDto> prodotti;
+        List<ProdottoDto> prodotti;
         if (categoria != null && !categoria.trim().isEmpty()) {
-            prodotti = prodottoService.mostraTuttiCat(categoria);
+            prodotti = prodottoService.showAllByCat(categoria);
         } else {
-            prodotti = prodottoService.mostraTutti();
+            prodotti = prodottoService.showAll();
         }
         model.addAttribute("listaProdotti", prodotti);
         return "catalogo";
     }
+
+
+
 }

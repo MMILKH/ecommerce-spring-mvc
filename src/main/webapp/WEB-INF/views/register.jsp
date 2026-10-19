@@ -11,7 +11,7 @@
 <div style="width: 100%; max-width: 400px;">
     <h2 class="text-center mb-4">Registrati</h2>
     <div class="card border p-4 bg-white ">
-        <form action="${pageContext.request.contextPath}/register" method="post">
+        <form action="${pageContext.request.contextPath}/register" method="post" modelAttribute="utenteDto">
             <div class="mb-3">
                 <label class="form-label" for="nome">nome</label>
                 <input class="form-control" id="nome" name="nome" required>

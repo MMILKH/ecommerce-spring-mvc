@@ -33,7 +33,7 @@ public class RigaOrdine {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ORDINE_ID",nullable = false)
-    private Carrello carrello;
+    private Ordine ordine;
 
 
     public int getId() {
@@ -92,11 +92,11 @@ public class RigaOrdine {
         this.prodotto = prodotto;
     }
 
-    public Carrello getCarrello() {
-        return carrello;
+    public Ordine getOrdine() {
+        return ordine;
     }
 
-    public void setCarrello(Carrello carrello) {
-        this.carrello = carrello;
+    public void setOrdine(Ordine ordine) {
+        this.ordine = ordine;
     }
 }

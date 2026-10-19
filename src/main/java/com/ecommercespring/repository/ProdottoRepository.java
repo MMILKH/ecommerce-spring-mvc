@@ -9,4 +9,5 @@ import java.util.List;
 public interface ProdottoRepository extends JpaRepository<Prodotto, Integer> {
 
     List<Prodotto> findAllByCategoria(String categoria);
+    Prodotto findById(int id);
 }

@@ -1,15 +1,19 @@
 package com.ecommercespring.dto;
 
-public class LoginDto {
+public class RequestLogin {
     private String email;
     private String password;
+    private int id;
 
-    public LoginDto() {
+    public RequestLogin() {
     }
 
-    public LoginDto(String email, String password) {
+
+
+    public RequestLogin(String email, String password, int id) {
         this.email = email;
         this.password = password;
+        this.id = id;
     }
 
     public String getEmail() {
@@ -26,5 +30,13 @@ public class LoginDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -1,5 +1,3 @@
-<html>
-<body>
-<h2>Hello World!</h2>
-</body>
-</html>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<%response.sendRedirect(request.getContextPath() + "/catalogo");%>

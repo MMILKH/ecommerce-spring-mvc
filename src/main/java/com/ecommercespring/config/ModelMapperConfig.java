@@ -1,6 +1,6 @@
 package com.ecommercespring.config;
 
-import com.ecommercespring.dto.ProdottoCatalogoDto;
+import com.ecommercespring.dto.ProdottoDto;
 import com.ecommercespring.model.Prodotto;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
@@ -21,7 +21,7 @@ public class ModelMapperConfig {
         return modelMapper;
     }
 
-    PropertyMap<Prodotto, ProdottoCatalogoDto> prodottoPropertyMap = new PropertyMap<Prodotto, ProdottoCatalogoDto>() {
+    PropertyMap<Prodotto, ProdottoDto> prodottoPropertyMap = new PropertyMap<Prodotto, ProdottoDto>() {
         @Override
         protected void configure() {}
     };

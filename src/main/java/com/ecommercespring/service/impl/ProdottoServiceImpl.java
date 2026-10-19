@@ -1,8 +1,9 @@
 package com.ecommercespring.service.impl;
 
-import com.ecommercespring.dto.ProdottoCatalogoDto;
+import com.ecommercespring.dto.ProdottoDto;
+
 import com.ecommercespring.model.Prodotto;
-import com.ecommercespring.repository.ProdottoRepository;
+import com.ecommercespring.repository.*;
 import com.ecommercespring.service.ProdottoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,23 +21,26 @@ public class ProdottoServiceImpl implements ProdottoService {
     private ModelMapper modelMapper;
 
     @Override
-    public List<ProdottoCatalogoDto> mostraTutti() {
+    public List<ProdottoDto> showAll() {
         List<Prodotto> prodotti = prodottoRepository.findAll();
-        List<ProdottoCatalogoDto> prodottiDto = new ArrayList<>();
+        List<ProdottoDto> prodottiDto = new ArrayList<>();
         for (Prodotto prodotto : prodotti) {
-            prodottiDto.add(modelMapper.map(prodotto, ProdottoCatalogoDto.class));
+            prodottiDto.add(modelMapper.map(prodotto, ProdottoDto.class));
         }
         return prodottiDto;
     }
 
     @Override
-    public List<ProdottoCatalogoDto> mostraTuttiCat(String categoria) {
-        List<ProdottoCatalogoDto> prodottiDto = new ArrayList<>();
+    public List<ProdottoDto> showAllByCat(String categoria) {
+        List<ProdottoDto> prodottiDto = new ArrayList<>();
         List<Prodotto> prodotti = prodottoRepository.findAllByCategoria(categoria);
         for (Prodotto prodotto : prodotti) {
-            prodottiDto.add(modelMapper.map(prodotto, ProdottoCatalogoDto.class));
+            prodottiDto.add(modelMapper.map(prodotto, ProdottoDto.class));
         }
         return prodottiDto;
 
     }
+
+
+
 }

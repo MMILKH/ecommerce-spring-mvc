@@ -65,7 +65,6 @@ public class AppConfig {
 
             return em;
         } catch (Throwable e) {
-            System.err.println("=== ERRORE NELLA CREAZIONE DI ENTITY_MANAGER_FACTORY ===");
             e.printStackTrace();
             throw e;
         }

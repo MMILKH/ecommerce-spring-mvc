@@ -2,7 +2,7 @@ package com.ecommercespring.dto;
 
 import java.math.BigDecimal;
 
-public class ProdottoCatalogoDto {
+public class ProdottoDto {
 
     private Integer id;
     private String nome;
@@ -15,9 +15,8 @@ public class ProdottoCatalogoDto {
 
     private BigDecimal prezzo;
 
-    public ProdottoCatalogoDto() {}
+    public ProdottoDto() {}
 
-    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 

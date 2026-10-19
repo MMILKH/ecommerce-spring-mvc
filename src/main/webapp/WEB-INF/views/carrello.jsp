@@ -38,7 +38,7 @@
                         <div class="col-md-5 text-md-end mt-3 mt-md-0">
                             <form action="${pageContext.request.contextPath}/carrello" method="post"
                                   class="d-inline-flex align-items-center gap-2 mb-2">
-                                <input type="hidden" name="azione" value="aggiornaq"/>
+                                <input type="hidden" name="azione" value="aggiorna"/>
                                 <input type="hidden" name="rigaCarrelloId" value="${r.id}"/>
                                 <input type="number" name="quantita" value="${r.quantita}" min="1" max="99"
                                        class="form-control form-control-sm text-center" style="width: 60px;"/>
@@ -71,13 +71,13 @@
                             <label class="form-label fw-bold" for="indirizzoS">Indirizzo di Spedizione</label>
                             <input class="form-control" type="text" id="indirizzoS" name="indirizzoS" required>
                         </div>
-                        <input type="hidden" name="totale" value="${totale}"/>
+
                         <div class="mb-3">
                             <label class="form-label fw-bold" for="indirizzoF">Indirizzo di Fatturazione</label>
                             <input class="form-control" type="text" id="indirizzoF" name="indirizzoF">
                         </div>
 
-                        <button type="submit" class="btn btn-success w-100 fw-bold  text-light">
+                        <button type="submit" class="btn btn-success w-100 fw-bold text-light">
                             Conferma Ordine
                         </button>
                     </form>

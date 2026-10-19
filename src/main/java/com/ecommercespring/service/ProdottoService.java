@@ -1,12 +1,14 @@
 package com.ecommercespring.service;
 
-import com.ecommercespring.dto.ProdottoCatalogoDto;
+import com.ecommercespring.dto.ProdottoDto;
 
 import java.util.List;
 
 public interface ProdottoService {
 
-    List<ProdottoCatalogoDto> mostraTutti();
+    List<ProdottoDto> showAll();
 
-    List<ProdottoCatalogoDto> mostraTuttiCat(String categoria);
+    List<ProdottoDto> showAllByCat(String categoria);
+
+
 }
