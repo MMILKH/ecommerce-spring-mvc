@@ -19,12 +19,20 @@
                     <span class="me-3 text-white">Benvenuto, <strong>${utenteLoggato.nome}</strong></span>
                     <a href="${pageContext.request.contextPath}/login?azione=logout"
                        class="btn btn-outline-light btn-sm">Logout</a>
+                    <a href="${pageContext.request.contextPath}/carrello"
+                       class="btn btn-outline-light btn-sm me-2">
+                        Carrello
+                        <span id="badgeCarrello" class="badge bg-danger ms-1">
+                                ${totaleE}
+                        </span>
+                    </a>
                 </c:when>
                 <c:otherwise>
                     <a href="${pageContext.request.contextPath}/login" class="btn btn-outline-primary btn-sm">Accedi</a>
                 </c:otherwise>
             </c:choose>
         </div>
+
     </div>
 </nav>
 
@@ -59,13 +67,16 @@
                         <div class="col-md-5 text-md-end">
                             <div class="col-md-5 text-md-end">
                                 <c:if test="${not empty utenteLoggato}">
-                                    <form action="${pageContext.request.contextPath}/aggiungiCarrello" method="post"
-                                          class="d-inline-flex gap-2 align-items-center">
-                                        <input type="hidden" name="prodottoId" value="${p.id}"/>
-                                        <input type="number" name="quantita" value="1" min="1"
-                                               class="form-control form-control-sm text-center"/>
-                                        <button type="submit" class="btn btn-primary btn-sm">Aggiungi</button>
-                                    </form>
+                                    <div class="d-inline-flex gap-2 align-items-center">
+                                        <form class="form-aggiungi d-flex gap-2">
+                                            <input type="hidden" name="prodottoId" value="${p.id}">
+                                            <input type="number"  name="quantita" value="1" min="1" max="99"
+                                                   class="form-control form-control-sm text-center" style="width: 70px;"/>
+                                            <button type="submit" class="btn btn-primary btn-sm" >
+                                                Aggiungi
+                                            </button>
+                                        </form>
+                                    </div>
                                 </c:if>
                             </div>
                         </div>
@@ -88,3 +99,27 @@
 
 </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+    jQuery(document).ready(function($) {
+    $(".form-aggiungi").submit(function(e) {
+        var form = $(this);
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "${pageContext.request.contextPath}/aggiungiCarrelloAjax",
+            data: form.serialize(),
+            success: function(totale) {
+                $("#badgeCarrello").text(totale);
+            },
+            error: function() {
+                alert("Errore durante l'aggiunta al carrello.");
+            }
+        });
+    });
+    });
+
+</script>

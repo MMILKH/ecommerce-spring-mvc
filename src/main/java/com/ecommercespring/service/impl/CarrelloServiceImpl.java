@@ -15,6 +15,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,7 +44,7 @@ public class CarrelloServiceImpl implements CarrelloService {
     }
 
     @Override
-    public RigaCarrelloDto aggiungiProdottoDaCatalogo(int utenteId, int prodottoId, int quantita) {
+    public void aggiungiProdottoDaCatalogo(int utenteId, int prodottoId, int quantita) {
         Carrello carrello = carrelloRepository.findByUtenteIdAndStato(utenteId, "NEW");
         RigaCarrello riga = rigaCarrelloRepository.findByCarrelloIdAndProdottoId(carrello.getId(), prodottoId);
         if (riga != null) {
@@ -58,7 +60,20 @@ public class CarrelloServiceImpl implements CarrelloService {
             riga.setDataUltimaModifica(new Date());
         }
         rigaCarrelloRepository.save(riga);
-        return modelMapper.map(riga, RigaCarrelloDto.class);
+
+    }
+
+    @Override
+    public BigDecimal getTotale(int carrelloId) {
+        List<RigaCarrello> righe ;
+        righe = rigaCarrelloRepository.findByCarrelloId(carrelloId);
+        BigDecimal totale = BigDecimal.ZERO;
+        BigDecimal temp;
+        for (RigaCarrello r : righe){
+            temp= r.getProdotto().getPrezzo().multiply(new BigDecimal(r.getQuantita()));
+            totale = totale.add(temp);
+        }
+        return totale;
     }
 
     @Override
@@ -71,18 +86,30 @@ public class CarrelloServiceImpl implements CarrelloService {
     }
 
     @Override
-    public RigaCarrelloDto aggiornaQuantitaRiga(int rigaId, int quantita) {
+    public void aggiornaQuantitaRiga(int rigaId, int quantita) {
         RigaCarrello riga = rigaCarrelloRepository.findById(rigaId);
         riga.setQuantita(quantita);
         riga.setDataUltimaModifica(new Date());
         rigaCarrelloRepository.save(riga);
-        return modelMapper.map(riga, RigaCarrelloDto.class);
+
     }
 
     @Override
     public void rimuoviRiga(int rigaId) {
         RigaCarrello riga = rigaCarrelloRepository.findById(rigaId);
         rigaCarrelloRepository.delete(riga);
+    }
+
+    @Override
+    public int countElementi(int utenteId) {
+        Carrello carrello = carrelloRepository.findByUtenteIdAndStato(utenteId, "NEW");
+        List<RigaCarrello> righe ;
+        righe = rigaCarrelloRepository.findByCarrelloId(carrello.getId());
+        int totaleElementi= 0;
+        for (RigaCarrello riga : righe) {
+            totaleElementi+= riga.getQuantita();
+        }
+        return totaleElementi;
     }
 
 }

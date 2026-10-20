@@ -9,46 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a4ce172-96a9-49dc-a584-5dc7fc8f7cf4" name="Changes" comment="login e catalogo implementato">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/BackOfficeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/OrdineController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/OrdineDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/RigaOrdineDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/RuoloDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/UtenteDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/CarrelloRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/OrdineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/RigaCarrelloRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/RigaOrdineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/RuoloRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/StatoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/CarrelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/OrdineService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/CarrelloServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/OrdineServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin.jsp" afterDir="false" />
+    <list default="true" id="3a4ce172-96a9-49dc-a584-5dc7fc8f7cf4" name="Changes" comment="registrazione, login, ordine e visualizzazione backoffice">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/CarrelloControllerAjax.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/ModelMapperConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/config/ModelMapperConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/CarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/CarrelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/ProdottoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/ProdottoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/CarrelloDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/CarrelloDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/RequestLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/ProdottoCatalogoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/ProdottoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/RigaCarrelloDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/RigaCarrelloDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/model/RigaOrdine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/model/RigaOrdine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/ProdottoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/ProdottoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/UtenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/repository/UtenteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/ProdottoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/ProdottoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/ProdottoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/ProdottoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/UtenteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/UtenteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/CarrelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/CarrelloService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/CarrelloServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/CarrelloServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,60 +59,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000031705838" />
-      <entry key="S30" value="1.00609024710336" />
-      <entry key="S60" value="1.2864755890117852" />
-      <entry key="M2" value="3.4103989409833604" />
-      <entry key="M5" value="11.656166859484586" />
-      <entry key="M10" value="21.807618900672008" />
-      <entry key="M15" value="30.491008679598373" />
-      <entry key="M30" value="54.76802147059524" />
-      <entry key="H1" value="97.59980158652745" />
-      <entry key="H2" value="160.2031468725201" />
-      <entry key="H4" value="240.17201718944077" />
-      <entry key="D1" value="471.29401147535924" />
-      <entry key="W1" value="574.5203912651887" />
+      <entry key="MS500" value="1.0000000000000009" />
+      <entry key="S2" value="1.0002539669937733" />
+      <entry key="S5" value="1.0543336572810094" />
+      <entry key="S10" value="1.3286763865864493" />
+      <entry key="S30" value="2.114770317243048" />
+      <entry key="S60" value="2.7229619512920475" />
+      <entry key="M2" value="3.573311647417395" />
+      <entry key="M5" value="4.7088719406529185" />
+      <entry key="M10" value="5.731312737237008" />
+      <entry key="M15" value="7.053907719602198" />
+      <entry key="M30" value="11.501895553371606" />
+      <entry key="H1" value="21.791538370570787" />
+      <entry key="H2" value="55.13502631205226" />
+      <entry key="H4" value="139.59904464747527" />
+      <entry key="D1" value="501.6722632347723" />
+      <entry key="W1" value="687.7881498036442" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.404287435968962E-9" />
-      <entry key="MS500" value="0.020249077584895837" />
-      <entry key="S2" value="0.37722573299598705" />
-      <entry key="S5" value="0.6770808401743433" />
-      <entry key="S10" value="0.8228492227399409" />
-      <entry key="S30" value="0.9396741721319115" />
-      <entry key="S60" value="1.0771114040558363" />
-      <entry key="M2" value="1.904451796770009" />
-      <entry key="M5" value="5.117512125125066" />
-      <entry key="M10" value="9.48193909810992" />
-      <entry key="M15" value="13.329271021976886" />
-      <entry key="M30" value="23.646080188844202" />
-      <entry key="H1" value="41.19848580026162" />
-      <entry key="H2" value="65.64012882412138" />
-      <entry key="H4" value="95.32547034771927" />
-      <entry key="D1" value="180.12017158248096" />
-      <entry key="W1" value="218.87055412817364" />
+      <entry key="MS100" value="6.785012021398468E-162" />
+      <entry key="MS500" value="5.838618839626804E-33" />
+      <entry key="S2" value="8.741330305454793E-9" />
+      <entry key="S5" value="5.979033858390718E-4" />
+      <entry key="S10" value="0.02445275095501859" />
+      <entry key="S30" value="0.2990775190279945" />
+      <entry key="S60" value="0.6327045814989619" />
+      <entry key="M2" value="1.0405177096075633" />
+      <entry key="M5" value="1.5092473395378183" />
+      <entry key="M10" value="1.8139951486968384" />
+      <entry key="M15" value="2.096135981957515" />
+      <entry key="M30" value="3.0212041869108255" />
+      <entry key="H1" value="5.409493128536265" />
+      <entry key="H2" value="14.546288248646041" />
+      <entry key="H4" value="41.309498739510545" />
+      <entry key="D1" value="166.95094403389274" />
+      <entry key="W1" value="234.29263373756504" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.01159784039898118" />
-      <entry key="MS500" value="0.41518393586277313" />
-      <entry key="S2" value="1.0674389192377192" />
-      <entry key="S5" value="1.5045604805482338" />
-      <entry key="S10" value="1.7244208588619543" />
-      <entry key="S30" value="1.9094720432031795" />
-      <entry key="S60" value="2.3391682899703348" />
-      <entry key="M2" value="5.277520907475653" />
-      <entry key="M5" value="16.713967384705835" />
-      <entry key="M10" value="31.22650120287862" />
-      <entry key="M15" value="43.75769380994385" />
-      <entry key="M30" value="78.35545600867441" />
-      <entry key="H1" value="138.74745825878605" />
-      <entry key="H2" value="225.80283507594692" />
-      <entry key="H4" value="335.46752269450974" />
-      <entry key="D1" value="651.4045741926976" />
-      <entry key="W1" value="793.3892837803331" />
+      <entry key="MS100" value="1.176959953956359E-13" />
+      <entry key="MS500" value="0.0025950894806581522" />
+      <entry key="S2" value="0.2259539385083896" />
+      <entry key="S5" value="0.6057925850599903" />
+      <entry key="S10" value="1.0909250702013322" />
+      <entry key="S30" value="2.301429622261453" />
+      <entry key="S60" value="3.28548851297467" />
+      <entry key="M2" value="4.56804586835781" />
+      <entry key="M5" value="6.194085358194648" />
+      <entry key="M10" value="7.531024059567006" />
+      <entry key="M15" value="9.138816381454017" />
+      <entry key="M30" value="14.51453773421324" />
+      <entry key="H1" value="27.19291537141535" />
+      <entry key="H2" value="69.67057336927093" />
+      <entry key="H4" value="180.89404042231445" />
+      <entry key="D1" value="668.613875966878" />
+      <entry key="W1" value="922.0789369097886" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -311,6 +281,7 @@
     <MESSAGE value="model creati e importazione delle jsp dallo scorso progetto" />
     <MESSAGE value="parte il progetto" />
     <MESSAGE value="login e catalogo implementato" />
-    <option name="LAST_COMMIT_MESSAGE" value="login e catalogo implementato" />
+    <MESSAGE value="registrazione, login, ordine e visualizzazione backoffice" />
+    <option name="LAST_COMMIT_MESSAGE" value="registrazione, login, ordine e visualizzazione backoffice" />
   </component>
 </project>

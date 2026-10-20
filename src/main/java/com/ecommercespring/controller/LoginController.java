@@ -40,9 +40,14 @@ public class LoginController {
 
         UtenteDto utente = utenteService.autentica(requestLogin);
 
-        if (utente != null) {
-            session.setAttribute("utenteLoggato", utente);
-            return "redirect:/catalogo";
+        if (utente != null ) {
+            if ("amministratore".equals(utente.getRuolo().getNome()) ||"operatore".equals(utente.getRuolo().getNome()) ) {
+                session.setAttribute("utenteLoggato", utente);
+                return "redirect:/admin";
+            }else  {
+                session.setAttribute("utenteLoggato", utente);
+                return "redirect:/catalogo";
+            }
         } else {
             model.addAttribute("errore", "Email o password non validi!");
             return "login";
