@@ -6,6 +6,7 @@ import com.ecommercespring.model.Utente;
 import com.ecommercespring.service.UtenteService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,11 +30,17 @@ public class RegisterController {
 
 
     @PostMapping("/register")
-    public String processRegistration(@ModelAttribute("utenteDto") UtenteDto utenteDto, BindingResult bindingResult) throws Exception {
+    public String processRegistration(@Valid @ModelAttribute("utenteDto") UtenteDto utenteDto, BindingResult bindingResult,Model model) throws Exception {
         if (bindingResult.hasErrors()) {
             return "registrazione";
         }
-        utenteService.registra(utenteDto);
-        return "redirect:/login";
+        String status = utenteService.registra(utenteDto);
+        model.addAttribute("status", status);
+        if (status.equals("OK")) {
+            return "redirect:/login";
+        }
+        else {
+            return status;
+        }
     }
 }

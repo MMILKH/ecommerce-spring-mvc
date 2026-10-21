@@ -9,6 +9,7 @@
 <body class="bg-light min-vh-100 d-flex flex-column justify-content-center align-items-center">
 
 <div style="width: 100%; max-width: 400px;">
+
     <h2 class="text-center mb-4">Registrati</h2>
     <div class="card border p-4 bg-white ">
         <form action="${pageContext.request.contextPath}/register" method="post" modelAttribute="utenteDto">

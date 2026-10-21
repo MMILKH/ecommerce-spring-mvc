@@ -66,14 +66,14 @@ public class UtenteServiceImpl implements UtenteService {
 
     @Override
     @Transactional
-    public void registra(UtenteDto dto) throws Exception {
+    public String registra(UtenteDto dto) throws Exception {
 
         if (!dto.getPassword().equals(dto.getPasswordconf())) {
-            throw new IllegalArgumentException("Le password non coincidono.");
+            return "Le password non coincidono.";
         }
 
         if ((utenteRepository.findByEmail(dto.getEmail())) != null) {
-            throw new IllegalArgumentException("Email già registrata nel sistema.");
+            return "Email già registrata nel sistema.";
         }
         Ruolo ruolo = ruoloRepository.findByNome("CUSTOMER");
         Utente utente = new Utente();
@@ -96,7 +96,7 @@ public class UtenteServiceImpl implements UtenteService {
                c.setDataCreazione(new java.util.Date());
                 carrelloRepository.save(c);
 
-
+        return "ok";
     }
 
     @Override

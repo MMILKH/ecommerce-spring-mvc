@@ -29,6 +29,8 @@ public class CarrelloController {
         if(utenteLoggato == null){
             return "redirect:/login";
         }
+        int totaleE = carrelloService.countElementi(utenteLoggato.getId());
+        session.setAttribute("totaleE", totaleE);
         CarrelloDto carrelloDto = carrelloService.getCarrelloAttivo(utenteLoggato.getId());
         List<RigaCarrelloDto> righe = carrelloService.getRigheByCarrelloId(carrelloDto.getId());
         BigDecimal totale = carrelloService.getTotale(carrelloDto.getId());
@@ -64,20 +66,22 @@ public class CarrelloController {
         if (utenteLoggato == null) {
             return "redirect:/login";
         }
-
+        int totaleE = 0;
         switch (azione) {
             case "aggiorna":
                 if (quantita != null && quantita > 0) {
                     carrelloService.aggiornaQuantitaRiga(rigaCarrelloId, quantita);
+                     totaleE= carrelloService.countElementi(utenteLoggato.getId());
                 }
                 break;
             case "rimuovi":
                 carrelloService.rimuoviRiga(rigaCarrelloId);
+                 totaleE= carrelloService.countElementi(utenteLoggato.getId());
                 break;
             default:
                 break;
         }
-
+        session.setAttribute("totaleE", totaleE);
         return "redirect:/carrello";
     }
 

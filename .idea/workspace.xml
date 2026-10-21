@@ -9,16 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a4ce172-96a9-49dc-a584-5dc7fc8f7cf4" name="Changes" comment="registrazione, login, ordine e visualizzazione backoffice">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/CarrelloControllerAjax.java" afterDir="false" />
+    <list default="true" id="3a4ce172-96a9-49dc-a584-5dc7fc8f7cf4" name="Changes" comment="aggiunta al carrello con ajax">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/include/navbar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/CarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/CarrelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/ProdottoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/ProdottoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/CarrelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/CarrelloService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/CarrelloServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/CarrelloServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/UtenteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/dto/UtenteDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/UtenteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/UtenteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecommercespring/service/impl/UtenteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/carrello.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/catalogo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -59,60 +60,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000000000009" />
-      <entry key="S2" value="1.0002539669937733" />
-      <entry key="S5" value="1.0543336572810094" />
-      <entry key="S10" value="1.3286763865864493" />
-      <entry key="S30" value="2.114770317243048" />
-      <entry key="S60" value="2.7229619512920475" />
-      <entry key="M2" value="3.573311647417395" />
-      <entry key="M5" value="4.7088719406529185" />
-      <entry key="M10" value="5.731312737237008" />
-      <entry key="M15" value="7.053907719602198" />
-      <entry key="M30" value="11.501895553371606" />
-      <entry key="H1" value="21.791538370570787" />
-      <entry key="H2" value="55.13502631205226" />
-      <entry key="H4" value="139.59904464747527" />
-      <entry key="D1" value="501.6722632347723" />
-      <entry key="W1" value="687.7881498036442" />
+      <entry key="MS500" value="1.0000000000002227" />
+      <entry key="S2" value="1.0006869534683236" />
+      <entry key="S5" value="1.054296386571914" />
+      <entry key="S10" value="1.2330158504735547" />
+      <entry key="S30" value="1.615358902567635" />
+      <entry key="S60" value="1.7844481516120965" />
+      <entry key="M2" value="1.8856907765197155" />
+      <entry key="M5" value="1.9526049826989476" />
+      <entry key="M10" value="1.9760153152229651" />
+      <entry key="M15" value="1.9841096371670695" />
+      <entry key="M30" value="2.066052469670714" />
+      <entry key="H1" value="4.0409952180954125" />
+      <entry key="H2" value="18.21464164681955" />
+      <entry key="H4" value="74.80578207237895" />
+      <entry key="D1" value="463.7686402243966" />
+      <entry key="W1" value="707.0384423004174" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="6.785012021398468E-162" />
-      <entry key="MS500" value="5.838618839626804E-33" />
-      <entry key="S2" value="8.741330305454793E-9" />
-      <entry key="S5" value="5.979033858390718E-4" />
-      <entry key="S10" value="0.02445275095501859" />
-      <entry key="S30" value="0.2990775190279945" />
-      <entry key="S60" value="0.6327045814989619" />
-      <entry key="M2" value="1.0405177096075633" />
-      <entry key="M5" value="1.5092473395378183" />
-      <entry key="M10" value="1.8139951486968384" />
-      <entry key="M15" value="2.096135981957515" />
-      <entry key="M30" value="3.0212041869108255" />
-      <entry key="H1" value="5.409493128536265" />
-      <entry key="H2" value="14.546288248646041" />
-      <entry key="H4" value="41.309498739510545" />
-      <entry key="D1" value="166.95094403389274" />
-      <entry key="W1" value="234.29263373756504" />
+      <entry key="MS100" value="6.587682120593927E-31" />
+      <entry key="MS500" value="9.199125142899873E-7" />
+      <entry key="S2" value="0.030969673852002465" />
+      <entry key="S5" value="0.24910053064713553" />
+      <entry key="S10" value="0.4990997201433151" />
+      <entry key="S30" value="0.7932238713906532" />
+      <entry key="S60" value="0.8906311646190319" />
+      <entry key="M2" value="0.9437325704981427" />
+      <entry key="M5" value="0.9771012695053609" />
+      <entry key="M10" value="0.9884845406882725" />
+      <entry key="M15" value="0.992375715071299" />
+      <entry key="M30" value="1.0206182516458526" />
+      <entry key="H1" value="1.5706554503053738" />
+      <entry key="H2" value="5.33202149806683" />
+      <entry key="H4" value="22.035864053607572" />
+      <entry key="D1" value="152.40012255604472" />
+      <entry key="W1" value="238.33043089169584" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.176959953956359E-13" />
-      <entry key="MS500" value="0.0025950894806581522" />
-      <entry key="S2" value="0.2259539385083896" />
-      <entry key="S5" value="0.6057925850599903" />
-      <entry key="S10" value="1.0909250702013322" />
-      <entry key="S30" value="2.301429622261453" />
-      <entry key="S60" value="3.28548851297467" />
-      <entry key="M2" value="4.56804586835781" />
-      <entry key="M5" value="6.194085358194648" />
-      <entry key="M10" value="7.531024059567006" />
-      <entry key="M15" value="9.138816381454017" />
-      <entry key="M30" value="14.51453773421324" />
-      <entry key="H1" value="27.19291537141535" />
-      <entry key="H2" value="69.67057336927093" />
-      <entry key="H4" value="180.89404042231445" />
-      <entry key="D1" value="668.613875966878" />
-      <entry key="W1" value="922.0789369097886" />
+      <entry key="MS100" value="6.810271808351585E-4" />
+      <entry key="MS500" value="0.23261256594455548" />
+      <entry key="S2" value="0.7145682710228379" />
+      <entry key="S5" value="1.1142740540235252" />
+      <entry key="S10" value="1.5906386133259134" />
+      <entry key="S30" value="2.335263502634235" />
+      <entry key="S60" value="2.633082099378513" />
+      <entry key="M2" value="2.8068603081745183" />
+      <entry key="M5" value="2.9202717718259996" />
+      <entry key="M10" value="2.959711383330753" />
+      <entry key="M15" value="2.9732766628742" />
+      <entry key="M30" value="3.084996504040554" />
+      <entry key="H1" value="5.610061318799921" />
+      <entry key="H2" value="23.5431778987224" />
+      <entry key="H4" value="96.8340980680605" />
+      <entry key="D1" value="616.1602564192124" />
+      <entry key="W1" value="945.3669952028296" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -126,32 +127,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.122.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/SI2001-PA/Desktop/ecommerce-spring-mvc&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.executor": "Debug",
+    "Tomcat Server.Tomcat 9.0.122.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/SI2001-PA/Desktop/ecommerce-spring-mvc",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
       <map>
@@ -282,6 +283,7 @@
     <MESSAGE value="parte il progetto" />
     <MESSAGE value="login e catalogo implementato" />
     <MESSAGE value="registrazione, login, ordine e visualizzazione backoffice" />
-    <option name="LAST_COMMIT_MESSAGE" value="registrazione, login, ordine e visualizzazione backoffice" />
+    <MESSAGE value="aggiunta al carrello con ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta al carrello con ajax" />
   </component>
 </project>

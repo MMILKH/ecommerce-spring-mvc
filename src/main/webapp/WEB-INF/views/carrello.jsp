@@ -10,16 +10,7 @@
 </head>
 <body class="p-4">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 p-3 border">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="${pageContext.request.contextPath}/catalogo">E-Commerce</a>
-        <div>
-            <span class="me-3 text-white">Benvenuto, <strong>${utenteLoggato.nome}</strong></span>
-            <a href="${pageContext.request.contextPath}/login?azione=logout"
-               class="btn btn-outline-light btn-sm">Logout</a>
-        </div>
-    </div>
-</nav>
+<jsp:include page="/WEB-INF/views/include/navbar.jsp" />
 
 <div class="container">
     <h1 class="mb-4">Carrello Acquisti</h1>

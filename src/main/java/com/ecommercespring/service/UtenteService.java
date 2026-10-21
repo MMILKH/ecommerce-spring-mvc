@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface UtenteService {
     UtenteDto autentica(RequestLogin requestLogin);
-    void registra(UtenteDto utente) throws Exception;
+    String registra(UtenteDto utente) throws Exception;
     List<UtenteDto> showAll();
 }
